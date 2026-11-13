@@ -157,11 +157,19 @@ CONCEPTS = {**HAZARDS, **SIGNS}
 PREFIX = "@"
 
 
+# Safety equipment named in a message is not itself a hazard: "the smoke alarm battery chirps" is routine.
+EQUIPMENT = ("smoke alarm", "smoke detector", "fire alarm", "fire door", "fire extinguisher", "fire blanket")
+
+
 def concepts(text: str) -> list[str]:
-    low = text.lower().replace("’", "'")
-    words = TOKEN.findall(low)
+    full = text.lower().replace("’", "'")
+    calm = full
+    for phrase in EQUIPMENT:
+        calm = calm.replace(phrase, " ")
     found = []
     for name, cues in CONCEPTS.items():
+        low = calm if name in HAZARDS else full
+        words = TOKEN.findall(low)
         for c in cues:
             hit = c in low if (" " in c or "-" in c or "'" in c) else any(w.startswith(c) for w in words)
             if hit:
@@ -345,3 +353,16 @@ def rules(text: str) -> Decision:
     urg = "emergency" if hit else "urgent" if any(w in low for w in URGENT_WORDS) else "routine"
     trade = next((t for t, ws in TRADE_WORDS.items() if any(w in low for w in ws)), "general")
     return Decision(urg, trade, 1.0 if hit else 0.0, [], hit)
+
+
+# Chosen by `propman evaluate` (phrasing-held-out cross-validation on the tuning messages); see the report.
+TUNED_L2_WORDS = 0.03
+TUNED_THRESHOLD = 0.12
+
+
+def fit(requests: Sequence[Request], l2_words: float = TUNED_L2_WORDS, threshold: float = TUNED_THRESHOLD) -> Triage:
+    """Fit with settings already chosen, skipping the cross-validation (for the console and the CLI)."""
+    texts = [r.text for r in requests]
+    urg = fit_softmax(texts, [r.urgency for r in requests], URGENCIES, l2_words)
+    trade = fit_softmax(texts, [r.trade for r in requests], TRADES, l2_words)
+    return Triage(urg, trade, threshold)

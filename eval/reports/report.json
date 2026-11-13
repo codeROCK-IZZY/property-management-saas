@@ -1,0 +1,239 @@
+{
+  "tuning": {
+    "grid": [
+      {
+        "l2_words": 0.001,
+        "threshold": 0.14,
+        "emergency_recall": 0.9583333333333334,
+        "urgency_accuracy": 0.6746666666666666,
+        "trade_accuracy": 0.9026666666666666
+      },
+      {
+        "l2_words": 0.01,
+        "threshold": 0.14,
+        "emergency_recall": 0.9583333333333334,
+        "urgency_accuracy": 0.6913333333333334,
+        "trade_accuracy": 0.9446666666666667
+      },
+      {
+        "l2_words": 0.03,
+        "threshold": 0.12,
+        "emergency_recall": 0.9583333333333334,
+        "urgency_accuracy": 0.7006666666666667,
+        "trade_accuracy": 0.9446666666666667
+      },
+      {
+        "l2_words": 0.1,
+        "threshold": 0.11,
+        "emergency_recall": 0.9583333333333334,
+        "urgency_accuracy": 0.7053333333333334,
+        "trade_accuracy": 0.9393333333333334
+      },
+      {
+        "l2_words": 0.3,
+        "threshold": 0.1,
+        "emergency_recall": 0.9583333333333334,
+        "urgency_accuracy": 0.702,
+        "trade_accuracy": 0.9393333333333334
+      }
+    ],
+    "l2_words": 0.03,
+    "threshold": 0.12,
+    "false_alarm_budget": 0.15,
+    "messages": 1500
+  },
+  "classify": {
+    "validation": {
+      "keywords": {
+        "messages": 1500,
+        "emergency_recall": 0.09722222222222222,
+        "false_alarm_rate": 0.13864306784660768,
+        "urgency_accuracy": 0.47933333333333333,
+        "trade_accuracy": 0.6926666666666667
+      },
+      "words only": {
+        "messages": 1500,
+        "emergency_recall": 0.6736111111111112,
+        "false_alarm_rate": 0.25958702064896755,
+        "urgency_accuracy": 0.498,
+        "trade_accuracy": 0.576
+      },
+      "triage": {
+        "messages": 1500,
+        "emergency_recall": 1.0,
+        "false_alarm_rate": 0.1556047197640118,
+        "urgency_accuracy": 0.6266666666666667,
+        "trade_accuracy": 0.8886666666666667
+      }
+    },
+    "fresh": {
+      "keywords": {
+        "messages": 1500,
+        "emergency_recall": 0.14814814814814814,
+        "false_alarm_rate": 0.08644688644688645,
+        "urgency_accuracy": 0.61,
+        "trade_accuracy": 0.6733333333333333
+      },
+      "words only": {
+        "messages": 1500,
+        "emergency_recall": 0.8444444444444444,
+        "false_alarm_rate": 0.3054945054945055,
+        "urgency_accuracy": 0.648,
+        "trade_accuracy": 0.5266666666666666
+      },
+      "triage": {
+        "messages": 1500,
+        "emergency_recall": 0.9037037037037037,
+        "false_alarm_rate": 0.1934065934065934,
+        "urgency_accuracy": 0.7146666666666667,
+        "trade_accuracy": 0.772
+      }
+    }
+  },
+  "portfolios": {
+    "validation": {
+      "inbox": {
+        "requests": 2324.0,
+        "emergencies": 262.0,
+        "emergencies_within_4h": 139.0,
+        "emergency_median_h": 3.646831773538987,
+        "emergency_p90_h": 32.8588716065104,
+        "emergency_worst_h": 62.75950226610076,
+        "urgent": 867.0,
+        "urgent_within_24h": 649.0,
+        "false_alarms_per_week": 0.0,
+        "night_false_alarms_per_week": 0.0,
+        "within_4h_share": 0.5305343511450382,
+        "urgent_24h_share": 0.748558246828143
+      },
+      "keywords": {
+        "requests": 2324.0,
+        "emergencies": 262.0,
+        "emergencies_within_4h": 148.0,
+        "emergency_median_h": 3.3622069802818473,
+        "emergency_p90_h": 32.222173055870044,
+        "emergency_worst_h": 62.75950226610076,
+        "urgent": 867.0,
+        "urgent_within_24h": 649.0,
+        "false_alarms_per_week": 12.75,
+        "night_false_alarms_per_week": 2.0416666666666665,
+        "within_4h_share": 0.5648854961832062,
+        "urgent_24h_share": 0.748558246828143
+      },
+      "triage": {
+        "requests": 2324.0,
+        "emergencies": 262.0,
+        "emergencies_within_4h": 262.0,
+        "emergency_median_h": 2.2336202495956115,
+        "emergency_p90_h": 2.9914908857805336,
+        "emergency_worst_h": 3.1724889763860933,
+        "urgent": 867.0,
+        "urgent_within_24h": 650.0,
+        "false_alarms_per_week": 12.833333333333334,
+        "night_false_alarms_per_week": 2.0833333333333335,
+        "within_4h_share": 1.0,
+        "urgent_24h_share": 0.7497116493656286
+      }
+    },
+    "fresh": {
+      "inbox": {
+        "requests": 3235.0,
+        "emergencies": 311.0,
+        "emergencies_within_4h": 160.0,
+        "emergency_median_h": 3.745059005387028,
+        "emergency_p90_h": 28.466827481211187,
+        "emergency_worst_h": 62.267389101399246,
+        "urgent": 1220.0,
+        "urgent_within_24h": 903.0,
+        "false_alarms_per_week": 0.0,
+        "night_false_alarms_per_week": 0.0,
+        "within_4h_share": 0.5144694533762058,
+        "urgent_24h_share": 0.7401639344262295
+      },
+      "keywords": {
+        "requests": 3235.0,
+        "emergencies": 311.0,
+        "emergencies_within_4h": 184.0,
+        "emergency_median_h": 3.1874087861074845,
+        "emergency_p90_h": 25.10857510991425,
+        "emergency_worst_h": 61.570668285376755,
+        "urgent": 1220.0,
+        "urgent_within_24h": 903.0,
+        "false_alarms_per_week": 8.3125,
+        "night_false_alarms_per_week": 1.28125,
+        "within_4h_share": 0.5916398713826366,
+        "urgent_24h_share": 0.7401639344262295
+      },
+      "triage": {
+        "requests": 3235.0,
+        "emergencies": 311.0,
+        "emergencies_within_4h": 301.0,
+        "emergency_median_h": 2.2196976589509703,
+        "emergency_p90_h": 3.087307612702653,
+        "emergency_worst_h": 23.08125070828011,
+        "urgent": 1220.0,
+        "urgent_within_24h": 910.0,
+        "false_alarms_per_week": 17.59375,
+        "night_false_alarms_per_week": 3.125,
+        "within_4h_share": 0.9678456591639871,
+        "urgent_24h_share": 0.7459016393442623
+      }
+    }
+  },
+  "examples": {
+    "validation": {
+      "missed_emergencies": [],
+      "kinds": 17,
+      "phrasings": 35
+    },
+    "fresh": {
+      "missed_emergencies": [
+        "Good morning, someone tried to force the lock and now it won't close upstairs.",
+        "Good morning, the bathroom ceiling has come down in the kitchen since this morning.",
+        "Hello, the plug socket in the bedroom went bang and is black in the bathroom. We have a baby at home. Cheers",
+        "Hey, Please help ASAP! the plug socket in the bedroom went bang and is black upstairs since yesterday. Thank you!",
+        "Hey, When you get a chance: the bedroom window frame fell out in the wind in the kitchen since yesterday. My mum is elderly and lives with us.",
+        "Hey, the bedroom window frame fell out in the wind in the bathroom since last night. Thank you!",
+        "Hi there, EMERGENCY: someone tried to force the lock and now it won't close in the kitchen. I work from home. Cheers",
+        "Hi, No rush, but the bedroom window frame fell out in the wind in flat 4B. My mum is elderly and lives with us."
+      ],
+      "kinds": 17,
+      "phrasings": 68
+    }
+  },
+  "ledger": {
+    "rent first": {
+      "tenants": 1000,
+      "late_fees": 1639,
+      "fees_total": 8195000,
+      "fees_while_all_rent_paid": 0,
+      "fees_for_months_paid_on_time": 559,
+      "tenants_with_fees": 382,
+      "paid_all_rent": 904,
+      "paid_all_rent_but_shown_owing_rent": 0
+    },
+    "oldest first": {
+      "tenants": 1000,
+      "late_fees": 3395,
+      "fees_total": 16975000,
+      "fees_while_all_rent_paid": 1756,
+      "fees_for_months_paid_on_time": 2315,
+      "tenants_with_fees": 382,
+      "paid_all_rent": 904,
+      "paid_all_rent_but_shown_owing_rent": 286
+    }
+  },
+  "seconds": 176.8,
+  "gate": {
+    "passed": true,
+    "failures": [],
+    "limits": {
+      "fresh_emergency_recall_min": 0.85,
+      "fresh_within_4h_min": 0.9,
+      "fresh_within_4h_over_keywords_min": 0.15,
+      "fresh_false_alarm_rate_max": 0.2,
+      "fresh_night_false_alarms_per_week_max": 3.5,
+      "fresh_trade_accuracy_min": 0.7
+    }
+  }
+}
